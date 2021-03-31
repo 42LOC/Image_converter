@@ -8,9 +8,7 @@ from odoo import models, fields, api
 class ImageCompressor(models.Model):
     _name = 'image_compressor'
 
-    name = fields.Char(string='Press to compress', readonly=True)
-
-    def compress_button(self):
+    def image_compressor_cron(self):
         pathfolder = "/home/vik/.local/share/Odoo/filestore/compressor"
         size = 1024, 1024
         self.env.cr.execute(

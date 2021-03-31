@@ -1,35 +1,36 @@
 <odoo>
   <data>
+
     <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="image_compressor_form_view">
-      <field name="name">image.compressor.form</field>
-      <field name="model">image_compressor</field>
-      <field name="arch" type="xml">
-            <form>
-              <sheet>
-                <group colspan="2" col="4">
-                    <field name="name"/>
-                    <button string="Compress" type="object" name="compress_button" class="btn primary"/>
-                </group>
-              </sheet>
-            </form>
-<!--        <tree>-->
-<!--          <field name="name"/>-->
-<!--          <field name="value"/>-->
-<!--          <field name="value2"/>-->
-<!--        </tree>-->
-      </field>
-    </record>
+<!--    <record model="ir.ui.view" id="image_compressor_form_view">-->
+<!--      <field name="name">image.compressor.form</field>-->
+<!--      <field name="model">image_compressor</field>-->
+<!--      <field name="arch" type="xml">-->
+<!--            <form>-->
+<!--              <sheet>-->
+<!--                <group colspan="2" col="4">-->
+<!--                    <field name="name"/>-->
+<!--                    <button string="Compress" type="object" name="compress_button" class="btn primary"/>-->
+<!--                </group>-->
+<!--              </sheet>-->
+<!--            </form>-->
+<!--&lt;!&ndash;        <tree>&ndash;&gt;-->
+<!--&lt;!&ndash;          <field name="name"/>&ndash;&gt;-->
+<!--&lt;!&ndash;          <field name="value"/>&ndash;&gt;-->
+<!--&lt;!&ndash;          <field name="value2"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        </tree>&ndash;&gt;-->
+<!--      </field>-->
+<!--    </record>-->
 
 
     <!-- actions opening views on models -->
 
-    <record model="ir.actions.act_window" id="image_compressor.action_window">
-      <field name="name">image_compressor window</field>
-      <field name="res_model">image_compressor</field>
-      <field name="view_mode">form</field>
-    </record>
+<!--    <record model="ir.actions.act_window" id="image_compressor.action_window">-->
+<!--      <field name="name">image_compressor window</field>-->
+<!--      <field name="res_model">image_compressor</field>-->
+<!--      <field name="view_mode">form</field>-->
+<!--    </record>-->
 
 
     <!-- server action to the one above -->
