@@ -18,12 +18,12 @@ class ImageCompressor(models.Model):
         def convert(self, image):
             if image.size[0] > 1024 or image.size[1] > 1024:
                 image.thumbnail(size)
-                image.save(f"{pathfolder}/{attach['store_fname']}", "JPEG")
-                file_size = os.path.getsize(f"{pathfolder}/{attach['store_fname']}")
-                self.env.cr.execute(f"""UPDATE ir_attachment SET file_size = {file_size} WHERE id = {attach['id']};""")
+                image.save("{}/{}".format(pathfolder, attach['store_fname']), "JPEG")
+                file_size = os.path.getsize("{}/{}".format(pathfolder, attach['store_fname']))
+                self.env.cr.execute("""UPDATE ir_attachment SET file_size = {} WHERE id = {};""".format(file_size, attach['id']))
 
         for attach in attachment:
-            images = f"{pathfolder}/{attach['store_fname']}"
+            images = "{}/{}".format(pathfolder, attach['store_fname'])
             try:
                 image = Image.open(images)
                 try:
@@ -31,4 +31,4 @@ class ImageCompressor(models.Model):
                 finally:
                     image.close()
             except (IOError, OSError) as e:
-                print(f"Sorry, but {e}")
+                print("Sorry, but {}".format(e))
