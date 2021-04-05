@@ -9,7 +9,7 @@ class ImageCompressor(models.Model):
     _name = 'image_compressor'
 
     def image_compressor_cron(self):
-        pathfolder = "/home/vik/.local/share/Odoo/filestore/compressor"
+        pathfolder = "/var/odoo-data/filestore/DB1"
         size = 1024, 1024
         self.env.cr.execute(
             """SELECT * FROM ir_attachment WHERE file_size > 500000 AND res_model NOT IN ('ir.ui.view', 'res.country');""")
